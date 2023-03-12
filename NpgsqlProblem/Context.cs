@@ -10,7 +10,7 @@ public class Context : DbContext
         base.OnConfiguring(optionsBuilder);
         if (!optionsBuilder.IsConfigured)
         {
-            optionsBuilder.UseNpgsql("User ID=test;Password=test;Host=localhost;Port=5432;Database=testdb;Pooling=true;Connection Lifetime=0;")
+            optionsBuilder.UseNpgsql("User ID=test;Password=test;Host=localhost;Port=5432;Database=testdb;Pooling=true;Connection Lifetime=0;Timeout=45;CommandTimeout=45;InternalCommandTimeout=45;CancellationTimeout=45;")
                 .EnableSensitiveDataLogging()
                 .EnableDetailedErrors();
         }
